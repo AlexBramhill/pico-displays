@@ -3,7 +3,7 @@ import jpegdec
 from image_renderer.image_renderer import ImageRendererAbstract
 
 
-class Jpeg_Renderer(ImageRendererAbstract):
+class JpegRenderer(ImageRendererAbstract):
     def __init__(self, display):
         self.display = display
         self._jpegdecInstance = jpegdec.JPEG(display)

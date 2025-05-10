@@ -1,8 +1,8 @@
 import pngdec
-from image_renderer.image_renderer import ImageRendererAbstract
+from src.image_renderer.image_renderer import ImageRendererAbstract
 
 
-class Png_Renderer(ImageRendererAbstract):
+class PngRenderer(ImageRendererAbstract):
     def __init__(self, display):
         self.display = display
         self._pngdecInstance = pngdec.PNG(display)
