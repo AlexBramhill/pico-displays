@@ -1,24 +1,23 @@
 import jpegdec
-
+from src.display.pimoroni_display import PimoroniDisplay
+from src.image_renderer.image_types import IMAGE_TYPE
 from src.image_renderer.image_renderer import ImageRendererAbstract
 
 
-class JpegRenderer(ImageRendererAbstract):
-    def __init__(self, display):
-        self.display = display
-        self._jpegdecInstance = jpegdec.JPEG(display)
+class PimoroniJpegRenderer(ImageRendererAbstract):
+    def __init__(self, display: PimoroniDisplay):
+        self._display = display.get_pimoroni_display()
+        self._jpegdecInstance = jpegdec.JPEG(self._display)
         self._initialised = True
+        super().__init__(image_type=IMAGE_TYPE.JPG)
 
     def display_image_from_file(self, path):
         with open(path, "rb") as f:
             self._jpegdecInstance.open_RAM(f.read())
             self._jpegdecInstance.decode(0, 0)
-        self.display.update()
+        self._display.update()
 
     def display_image_from_bytes(self, image_bytes):
         self._jpegdecInstance.open_RAM(image_bytes)
         self._jpegdecInstance.decode(0, 0)
-        self.display.update()
-
-    def get_required_file_format(self):
-        return "jpeg"
+        self._display.update()
