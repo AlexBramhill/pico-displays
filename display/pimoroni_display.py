@@ -1,5 +1,4 @@
 from picographics import PEN_1BIT, PEN_P4, PEN_P8, PEN_RGB332, PEN_RGB565, PEN_RGB888, PicoGraphics
-from src.image_renderer.image_renderer_factory import ImageRendererFactory
 from src.display.colour_profiles import COLOUR_PROFILE
 from src.display.configs.bases.display_config import DisplayConfig
 from src.display.configs.bases.pimoroni_config import PimoroniDisplayConfig
