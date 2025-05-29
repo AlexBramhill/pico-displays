@@ -41,11 +41,12 @@ class DisplayAbstract:
     def record_update(self):
         self._last_update_time = time.ticks_ms()
 
-    def ready_to_update(self):
+    def is_ready_to_update(self):
         """Check if the display is ready for an update."""
         if self._maximum_update_speed_in_ms is None or self._last_update_time is None:
             return True
         elapsed = time.ticks_diff(time.ticks_ms(), self._last_update_time)
+        (print(f"Elapsed time since last update: {elapsed} ms"))
         return elapsed >= self._maximum_update_speed_in_ms
 
     def get_display_type(self):

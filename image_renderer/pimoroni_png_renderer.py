@@ -6,8 +6,8 @@ from src.image_renderer.image_renderer import ImageRendererAbstract
 
 class PimoroniPngRenderer(ImageRendererAbstract):
     def __init__(self, display: PimoroniDisplay):
-        self._display = display.get_pimoroni_display()
-        self._pngdecInstance = pngdec.PNG(self._display)
+        self._display = display
+        self._pngdecInstance = pngdec.PNG(display.get_pimoroni_display())
         self._initialised = True
         super().__init__(image_type=IMAGE_TYPE.PNG)
 

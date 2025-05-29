@@ -41,8 +41,8 @@ class PimoroniDisplay(DisplayAbstract):
         super().record_update()
         return self._instance.update()
 
-    def ready_to_update(self):
-        return super().ready_to_update()
+    def is_ready_to_update(self):
+        return super().is_ready_to_update()
 
     def get_pimoroni_display(self):
         return self._instance
