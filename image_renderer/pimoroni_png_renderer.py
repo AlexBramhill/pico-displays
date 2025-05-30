@@ -11,12 +11,6 @@ class PimoroniPngRenderer(ImageRendererAbstract):
         self._initialised = True
         super().__init__(image_type=IMAGE_TYPE.PNG)
 
-    def display_image_from_file(self, path):
-        with open(path, "rb") as f:
-            self._pngdecInstance.open_RAM(f.read())
-            self._pngdecInstance.decode(0, 0)
-        self._display.update()
-
     def display_image_from_bytes(self, image_bytes):
         self._pngdecInstance.open_RAM(image_bytes)
         self._pngdecInstance.decode(0, 0)

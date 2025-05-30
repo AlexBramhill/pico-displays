@@ -10,13 +10,7 @@ class PimoroniJpegRenderer(ImageRendererAbstract):
         self._jpegdecInstance = jpegdec.JPEG(display.get_pimoroni_display())
         self._initialised = True
         super().__init__(image_type=IMAGE_TYPE.JPG)
-
-    def display_image_from_file(self, path):
-        with open(path, "rb") as f:
-            self._jpegdecInstance.open_RAM(f.read())
-            self._jpegdecInstance.decode(0, 0)
-        self._display.update()
-
+        
     def display_image_from_bytes(self, image_bytes):
         self._jpegdecInstance.open_RAM(image_bytes)
         self._jpegdecInstance.decode(0, 0)

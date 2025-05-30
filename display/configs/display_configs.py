@@ -30,16 +30,29 @@ def inky_config(image_format: int):
     )
 
 
+def waveshare_3in7_eink_config(image_format: int):
+    return DisplayConfig(
+        display_name="Waveshare 3.7\" E-Ink",
+        display_type=DISPLAY_TYPE.WAVESHARE_3IN7_EINK,
+        colour_profile=COLOUR_PROFILE.TWO_BIT,
+        image_format=image_format,
+        maximum_update_speed_in_ms=15000,
+    )
+
+
 class DISPLAY_TYPE:
     PIMORONI = 0
+    WAVESHARE_3IN7_EINK = 1
 
 
 class DISPLAY_CONFIG:
     DISPLAY2 = 0
     INKY = 1
+    WAVESHARE_3IN7_EINK = 2
 
 
 display_configs = {
     DISPLAY_CONFIG.DISPLAY2: display2_config,
-    DISPLAY_CONFIG.INKY: inky_config
+    DISPLAY_CONFIG.INKY: inky_config,
+    DISPLAY_CONFIG.WAVESHARE_3IN7_EINK: waveshare_3in7_eink_config
 }

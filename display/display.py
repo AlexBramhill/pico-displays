@@ -23,21 +23,6 @@ class DisplayAbstract:
         raise NotImplementedError(
             "This method should be overridden by subclasses.")
 
-    def render_image(self, image):
-        """Render an image on the display."""
-        raise NotImplementedError(
-            "This method should be overridden by subclasses.")
-
-    def update_with_image_from_bytes(self, image_bytes):
-        """Update the display with an image from bytes."""
-        raise NotImplementedError(
-            "This method should be overridden by subclasses.")
-
-    def update_with_image_from_file(self, path):
-        """Update the display with an image from a file."""
-        raise NotImplementedError(
-            "This method should be overridden by subclasses.")
-
     def record_update(self):
         self._last_update_time = time.ticks_ms()
 
@@ -46,7 +31,6 @@ class DisplayAbstract:
         if self._maximum_update_speed_in_ms is None or self._last_update_time is None:
             return True
         elapsed = time.ticks_diff(time.ticks_ms(), self._last_update_time)
-        (print(f"Elapsed time since last update: {elapsed} ms"))
         return elapsed >= self._maximum_update_speed_in_ms
 
     def get_display_type(self):

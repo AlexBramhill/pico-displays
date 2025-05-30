@@ -7,6 +7,8 @@ from src.display.display import DisplayAbstract
 
 class PimoroniDisplay(DisplayAbstract):
     def __init__(self, config: DisplayConfig):
+        super().__init__(config)
+
         self._validate_config(config)
 
         self._config = config
@@ -17,8 +19,6 @@ class PimoroniDisplay(DisplayAbstract):
             self._pimoroni_config.display, self._get_pen_type())
 
         self._configure_update_speed()
-
-        super().__init__(config)
 
     def _validate_config(self, config: DisplayConfig):
         """Validate the configuration for the display."""
@@ -40,9 +40,6 @@ class PimoroniDisplay(DisplayAbstract):
     def update(self):
         super().record_update()
         return self._instance.update()
-
-    def is_ready_to_update(self):
-        return super().is_ready_to_update()
 
     def get_pimoroni_display(self):
         return self._instance
