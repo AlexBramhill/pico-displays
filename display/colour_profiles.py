@@ -5,4 +5,4 @@ class COLOUR_PROFILE:
     EIGHT_BIT_PALETTE = 7
     RGB332 = 5
     RGB565 = 6
-    RGB888 = 7
+    RGB888 = 8
