@@ -1,0 +1,3 @@
+class DISPLAY_TYPE:
+    PIMORONI = 0
+    WAVESHARE_3IN7_EINK = 1

@@ -1,5 +1,7 @@
 from picographics import DISPLAY_INKY_PACK, DISPLAY_PICO_DISPLAY_2
-from src.display.colour_profiles import COLOUR_PROFILE
+from src.display.enums.display_configs import DISPLAY_CONFIG
+from src.display.enums.colour_profiles import COLOUR_PROFILE
+from src.display.enums.display_types import DISPLAY_TYPE
 from src.display.configs.bases.display_config import DisplayConfig
 from src.display.configs.bases.pimoroni_config import PimoroniDisplayConfig
 
@@ -38,17 +40,6 @@ def waveshare_3in7_eink_config(image_format: int):
         image_format=image_format,
         maximum_update_speed_in_ms=15000,
     )
-
-
-class DISPLAY_TYPE:
-    PIMORONI = 0
-    WAVESHARE_3IN7_EINK = 1
-
-
-class DISPLAY_CONFIG:
-    DISPLAY2 = 0
-    INKY = 1
-    WAVESHARE_3IN7_EINK = 2
 
 
 display_configs = {

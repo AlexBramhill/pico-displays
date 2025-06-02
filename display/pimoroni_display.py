@@ -1,5 +1,5 @@
 from picographics import PEN_1BIT, PEN_P4, PEN_P8, PEN_RGB332, PEN_RGB565, PEN_RGB888, PicoGraphics
-from src.display.colour_profiles import COLOUR_PROFILE
+from src.display.enums.colour_profiles import COLOUR_PROFILE
 from src.display.configs.bases.display_config import DisplayConfig
 from src.display.configs.bases.pimoroni_config import PimoroniDisplayConfig
 from src.display.display import DisplayAbstract
