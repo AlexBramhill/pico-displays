@@ -1,14 +1,15 @@
-from src.image_renderer.waveshare_3in7_eink_bmp_raw_renderer import Waveshare3In7EinkBmpRawRenderer
-from src.display.configs.display_configs import DISPLAY_TYPE
-from src.image_renderer.pimoroni_jpeg_renderer import PimoroniJpegRenderer
-from src.image_renderer.pimoroni_png_renderer import PimoroniPngRenderer
-from src.display.display import DisplayAbstract
-from src.image_renderer.image_types import IMAGE_TYPE
+from src.image_renderer.abstract.image_renderer_abstract import ImageRendererAbstract
+from src.image_renderer.concrete.waveshare_3in7_eink_bmp_raw_renderer import Waveshare3In7EinkBmpRawRenderer
+from src.enums.display_types import DISPLAY_TYPE
+from src.image_renderer.concrete.pimoroni_jpeg_renderer import PimoroniJpegRenderer
+from src.image_renderer.concrete.pimoroni_png_renderer import PimoroniPngRenderer
+from src.display.abstract.display_abstract import DisplayAbstract
+from src.enums.image_types import IMAGE_TYPE
 
 
 class ImageRendererFactory:
     @staticmethod
-    def create_renderer(display: DisplayAbstract, image_type: int):
+    def create_renderer(display: DisplayAbstract, image_type: int | None = None) -> ImageRendererAbstract:
         if display.get_display_type() == DISPLAY_TYPE.PIMORONI:
             if image_type == IMAGE_TYPE.PNG:
                 ImageRendererFactory._instance = PimoroniPngRenderer(
@@ -30,6 +31,5 @@ class ImageRendererFactory:
         else:
             raise NotImplementedError(
                 f"Display type {display.get_display_type()} is not supported for image rendering.")
-        print(display.get_display_type())
-        print(image_type)
+
         return ImageRendererFactory._instance

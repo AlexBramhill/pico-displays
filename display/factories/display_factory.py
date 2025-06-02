@@ -1,8 +1,8 @@
 from src.display.configs.display_configs import DISPLAY_TYPE
 from src.display.configs.bases.display_config import DisplayConfig
-from src.display.display import DisplayAbstract
-from src.display.pimoroni_display import PimoroniDisplay
-from src.display.waveshare_3in7_eink_display import Waveshare3In7EinkDisplay
+from src.display.abstract.display_abstract import DisplayAbstract
+from src.display.concrete.pimoroni_display import PimoroniDisplay
+from src.display.concrete.waveshare_3in7_eink_display import Waveshare3In7EinkDisplay
 
 # Worth considering moving these imports in the if block below
 # to see if we can get away with not being tied to firmware specific imports

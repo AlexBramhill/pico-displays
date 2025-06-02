@@ -1,6 +1,6 @@
-from src.image_renderer.image_types import IMAGE_TYPE
-from src.display.waveshare_3in7_eink_display import Waveshare3In7EinkDisplay
-from src.image_renderer.image_renderer import ImageRendererAbstract
+from src.enums.image_types import IMAGE_TYPE
+from src.display.concrete.waveshare_3in7_eink_display import Waveshare3In7EinkDisplay
+from src.image_renderer.abstract.image_renderer_abstract import ImageRendererAbstract
 
 
 class Waveshare3In7EinkBmpRawRenderer(ImageRendererAbstract):

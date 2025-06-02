@@ -1,8 +1,0 @@
-class COLOUR_PROFILE:
-    ONE_BIT = 0
-    TWO_BIT = 1
-    FOUR_BIT_PALETTE = 3
-    EIGHT_BIT_PALETTE = 7
-    RGB332 = 5
-    RGB565 = 6
-    RGB888 = 8

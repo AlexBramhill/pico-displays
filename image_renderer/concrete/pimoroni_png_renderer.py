@@ -1,7 +1,7 @@
 import pngdec
-from src.display.pimoroni_display import PimoroniDisplay
-from src.image_renderer.image_types import IMAGE_TYPE
-from src.image_renderer.image_renderer import ImageRendererAbstract
+from src.display.concrete.pimoroni_display import PimoroniDisplay
+from src.enums.image_types import IMAGE_TYPE
+from src.image_renderer.abstract.image_renderer_abstract import ImageRendererAbstract
 
 
 class PimoroniPngRenderer(ImageRendererAbstract):
