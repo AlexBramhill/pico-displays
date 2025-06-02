@@ -1,4 +1,4 @@
-from src.image_renderer.waveshare_3in7_eink_bmp_renderer import Waveshare3In7EinkBmpRenderer
+from src.image_renderer.waveshare_3in7_eink_bmp_raw_renderer import Waveshare3In7EinkBmpRawRenderer
 from src.display.configs.display_configs import DISPLAY_TYPE
 from src.image_renderer.pimoroni_jpeg_renderer import PimoroniJpegRenderer
 from src.image_renderer.pimoroni_png_renderer import PimoroniPngRenderer
@@ -16,14 +16,20 @@ class ImageRendererFactory:
             elif image_type == IMAGE_TYPE.JPG:
                 ImageRendererFactory._instance = PimoroniJpegRenderer(
                     display)  # type: ignore
+            else:
+                raise NotImplementedError(
+                    f"Renderer type {display.get_display_type()} is not implemented for Pimoroni display.")
 
         elif display.get_display_type() == DISPLAY_TYPE.WAVESHARE_3IN7_EINK:
-            if image_type == IMAGE_TYPE.BMP:
-                ImageRendererFactory._instance = Waveshare3In7EinkBmpRenderer(
+            if image_type == IMAGE_TYPE.BMP_RAW:
+                ImageRendererFactory._instance = Waveshare3In7EinkBmpRawRenderer(
                     display)  # type: ignore
+            else:
+                raise NotImplementedError(
+                    f"Renderer type {display.get_display_type()} is not implemented for Waveshare 3.7 E-Ink display.")
         else:
             raise NotImplementedError(
-                f"Renderer type {image_type} is not implemented.")
+                f"Display type {display.get_display_type()} is not supported for image rendering.")
         print(display.get_display_type())
         print(image_type)
         return ImageRendererFactory._instance
