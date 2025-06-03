@@ -39,15 +39,11 @@ class DisplayAbstract:
         return elapsed >= self._maximum_update_speed_in_ms
 
     def get_ms_until_next_update_available(self):
-        print("**Getting time until next update available**")
         """Get the time when the display will be ready for the next update."""
         if self._maximum_update_speed_in_ms is None:
-            print("**No maximum update speed set, returning None**")
             return None
 
         if self._last_update_time is None:
-            print(
-                f"**No last update time set, returning {self._maximum_update_speed_in_ms}**")
             return self._maximum_update_speed_in_ms
 
         time_since_last_update = time.ticks_ms() - self._last_update_time
