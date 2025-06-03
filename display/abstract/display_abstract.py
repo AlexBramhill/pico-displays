@@ -6,6 +6,11 @@ from src.display.configs.bases.display_config import DisplayConfig
 class DisplayAbstract:
     def __init__(self, config: DisplayConfig):
         """Initialize the display."""
+        print(f"Initializing display with config: {config.display_name}")
+        print(f"Display type: {config.display_type}")
+        print(f"Colour profile: {config.colour_profile}")
+        print(f"Image format: {config.image_format}")
+        print(f"Maximum update speed: {config.maximum_update_speed_in_ms} ms")
         self._config = config
         self._maximum_update_speed_in_ms = config.maximum_update_speed_in_ms
         self._last_update_time = None
@@ -33,11 +38,21 @@ class DisplayAbstract:
         elapsed = time.ticks_diff(time.ticks_ms(), self._last_update_time)
         return elapsed >= self._maximum_update_speed_in_ms
 
-    def get_next_update_time(self):
+    def get_ms_until_next_update_available(self):
+        print("**Getting time until next update available**")
         """Get the time when the display will be ready for the next update."""
-        if self._maximum_update_speed_in_ms is None or self._last_update_time is None:
+        if self._maximum_update_speed_in_ms is None:
+            print("**No maximum update speed set, returning None**")
             return None
-        return self._last_update_time + self._maximum_update_speed_in_ms
+
+        if self._last_update_time is None:
+            print(
+                f"**No last update time set, returning {self._maximum_update_speed_in_ms}**")
+            return self._maximum_update_speed_in_ms
+
+        time_since_last_update = time.ticks_ms() - self._last_update_time
+
+        return self._maximum_update_speed_in_ms - time_since_last_update
 
     def get_display_type(self):
         return self._config.display_type
