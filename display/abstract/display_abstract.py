@@ -33,5 +33,11 @@ class DisplayAbstract:
         elapsed = time.ticks_diff(time.ticks_ms(), self._last_update_time)
         return elapsed >= self._maximum_update_speed_in_ms
 
+    def get_next_update_time(self):
+        """Get the time when the display will be ready for the next update."""
+        if self._maximum_update_speed_in_ms is None or self._last_update_time is None:
+            return None
+        return self._last_update_time + self._maximum_update_speed_in_ms
+
     def get_display_type(self):
         return self._config.display_type
