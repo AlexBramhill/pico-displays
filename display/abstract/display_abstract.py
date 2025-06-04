@@ -52,3 +52,7 @@ class DisplayAbstract:
 
     def get_display_type(self):
         return self._config.display_type
+
+    def get_default_rotation(self):
+        """Get the default rotation of the display."""
+        return self._config.default_rotation

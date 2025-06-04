@@ -13,7 +13,8 @@ class DisplayConfig:
         image_format: int | None,
         supported_image_formats: list[int],
         maximum_update_speed_in_ms: int | None = None,
-        pimoroni_config: PimoroniDisplayConfig | None = None
+        pimoroni_config: PimoroniDisplayConfig | None = None,
+        default_rotation: int = 0,
     ):
 
         colour_profile_to_use = colour_profile or supported_colour_profiles[0]
@@ -38,3 +39,4 @@ class DisplayConfig:
         self.image_format = image_format_to_use
         self.maximum_update_speed_in_ms = maximum_update_speed_in_ms
         self.pimoroni_config = pimoroni_config
+        self.default_rotation = default_rotation
