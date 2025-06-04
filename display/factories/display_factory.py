@@ -13,7 +13,6 @@ class DisplayFactory:
 
     @staticmethod
     def create(config: DisplayConfig) -> DisplayAbstract:
-        print(f"Creating display with config: {config.display_name}")
         if DisplayFactory._instantiated is True:
             raise RuntimeError(
                 "Multiple instances of Display are not allowed. Please use the same instance.")
