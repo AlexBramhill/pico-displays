@@ -10,4 +10,5 @@ class Waveshare3In7EinkBmpRawRenderer(ImageRendererAbstract):
         super().__init__(image_type=IMAGE_TYPE.BMP_RAW)
 
     def display_image_from_bytes(self, image_bytes):
-        self._waveshareDisplayInstance.EPD_3IN7_1Gray_Display_Part(image_bytes)
+        self._display.update()
+        self._waveshareDisplayInstance.EPD_3IN7_1Gray_Display(image_bytes)
