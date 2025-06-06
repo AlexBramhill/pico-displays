@@ -24,8 +24,7 @@ class Waveshare3In7EinkDisplay(DisplayAbstract): \
             self._long_refresh()
 
     def handle_update_count_and_get_should_long_refresh(self):
-        if (self._update_count >= self._hard_refresh_every):
-            self._long_refresh()
+        if (self._update_count == (self._hard_refresh_every - 1)):
             self._update_count = 0
             return True
         self._update_count += 1
@@ -44,4 +43,3 @@ class Waveshare3In7EinkDisplay(DisplayAbstract): \
             self._instance.EPD_3IN7_1Gray_Clear()
         elif (self._config.colour_profile == COLOUR_PROFILE.TWO_BIT):
             self._instance.EPD_3IN7_4Gray_Clear()
-        self._instance.ReadBusy()
