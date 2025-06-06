@@ -10,7 +10,6 @@ class Waveshare3In7EinkDisplay(DisplayAbstract): \
         super().__init__(config)
         self._config = config
         self._instance = EPD_3in7()
-        self._instance.EPD_3IN7_4Gray_init()
         self._update_count = 0
         self._hard_refresh_every = 10
 
