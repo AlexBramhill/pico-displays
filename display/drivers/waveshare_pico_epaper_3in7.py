@@ -186,7 +186,7 @@ class EPD_3in7:
             elif lut == 3:
                 self.send_data(self.lut_1Gray_A2[count])
             else:
-                print("There is no such lut ")
+                print("There is no such lut")
 
     def EPD_3IN7_4Gray_init(self):
 
