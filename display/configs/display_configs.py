@@ -39,7 +39,7 @@ def inky_config(image_format: int | None = None):
             IMAGE_TYPE.PNG,
             IMAGE_TYPE.JPG,
         ],
-        maximum_update_speed_in_ms=15000,
+        maximum_update_speed_in_ms=60000,
         pimoroni_config=PimoroniDisplayConfig(
             display=DISPLAY_INKY_PACK,
             update_speed=1
@@ -60,7 +60,7 @@ def waveshare_3in7_eink_config(image_format: int | None = None):
         supported_image_formats=[
             IMAGE_TYPE.BMP_RAW
         ],
-        maximum_update_speed_in_ms=15000,
+        maximum_update_speed_in_ms=60000,
         default_rotation=90
     )
 
