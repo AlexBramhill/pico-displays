@@ -9,7 +9,8 @@ class Waveshare3In7EinkBmpRawRenderer(ImageRendererAbstract):
         self._display = display
         self._waveshareDisplayInstance = display.get_waveshare_display()
         self._colour_profile = display.get_colour_profile()
-        super().__init__(image_type=IMAGE_TYPE.BMP_RAW)
+        super().__init__(image_type=IMAGE_TYPE.BMP_RAW,
+                         colour_profile=display.get_colour_profile())
 
     def display_image_from_bytes(self, image_bytes):
         self._display.update()

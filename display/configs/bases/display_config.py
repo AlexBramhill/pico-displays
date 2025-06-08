@@ -35,7 +35,7 @@ class DisplayConfig:
 
         self.display_name = display_name
         self.display_type = display_type
-        self.colour_profile = colour_profile
+        self.colour_profile = colour_profile_to_use
         self.image_format = image_format_to_use
         self.maximum_update_speed_in_ms = maximum_update_speed_in_ms
         self.pimoroni_config = pimoroni_config

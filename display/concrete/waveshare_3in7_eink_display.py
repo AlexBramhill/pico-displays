@@ -32,11 +32,6 @@ class Waveshare3In7EinkDisplay(DisplayAbstract): \
     def get_waveshare_display(self):
         return self._instance
 
-    def get_display_type(self):
-        return self._config.display_type
-
-    def get_colour_profile(self):
-        return self._config.colour_profile
 
     # Completely untested
     # And should definitely be separated out into two classes
