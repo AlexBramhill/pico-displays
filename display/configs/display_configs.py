@@ -51,7 +51,7 @@ def waveshare_3in7_eink_config(image_format: int | None = None):
     return DisplayConfig(
         display_name="Waveshare 3.7\" E-Ink",
         display_type=DISPLAY_TYPE.WAVESHARE_3IN7_EINK,
-        colour_profile=COLOUR_PROFILE.TWO_BIT,
+        colour_profile=COLOUR_PROFILE.ONE_BIT,
         supported_colour_profiles=[
             COLOUR_PROFILE.TWO_BIT,
             COLOUR_PROFILE.ONE_BIT
