@@ -61,7 +61,7 @@ def waveshare_3in7_eink_config(image_format: int | None = None):
             IMAGE_TYPE.BMP_RAW
         ],
         maximum_update_speed_in_ms=60000,
-        default_rotation=270
+        default_rotation=90
     )
 
 
