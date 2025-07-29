@@ -32,9 +32,9 @@ class Waveshare3In7EinkDisplay(DisplayAbstract): \
     def get_waveshare_display(self):
         return self._instance
 
-
     # Completely untested
     # And should definitely be separated out into two classes
+
     def _long_refresh(self):
         if (self._config.colour_profile == COLOUR_PROFILE.ONE_BIT):
             self._instance.EPD_3IN7_1Gray_Clear()
