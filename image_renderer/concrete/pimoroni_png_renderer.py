@@ -9,7 +9,8 @@ class PimoroniPngRenderer(ImageRendererAbstract):
         self._display = display
         self._pngdecInstance = pngdec.PNG(display.get_pimoroni_display())
         self._initialised = True
-        super().__init__(image_type=IMAGE_TYPE.PNG)
+        super().__init__(image_type=IMAGE_TYPE.PNG,
+                         colour_profile=display.get_colour_profile())
 
     def display_image_from_bytes(self, image_bytes):
         self._pngdecInstance.open_RAM(image_bytes)
