@@ -1,0 +1,35 @@
+{
+  "micropico.pyIgnore": [
+    "**/.picowgo",
+    "**/.micropico",
+    "**/.vscode",
+    "**/.gitignore",
+    "**/.git",
+    "**/.DS_Store",
+    "**/project.pico-go",
+    "**/env",
+    "**/venv",
+    "**/.venv",
+    "**/.idea",
+    "**/typings"
+  ],
+  "micropico.softResetAfterUpload": true,
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingModuleSource": "none"
+  },
+  "python.terminal.activateEnvironment": false,
+  "micropico.openOnStart": true,
+  "python.analysis.typeshedPaths": [
+    "~/.micropico-stubs/micropython-rp2-rpi_pico_w-stubs==1.23.0.post2",
+    "~/.micropico-stubs/included",
+    "./typings/"
+  ],
+  "python.analysis.extraPaths": [
+    "~/.micropico-stubs/micropython-rp2-rpi_pico_w-stubs==1.23.0.post2",
+    "~/.micropico-stubs/included",
+    "./src"
+  ],
+  "cSpell.words": ["Pimoroni"]
+}
