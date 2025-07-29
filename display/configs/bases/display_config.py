@@ -22,8 +22,7 @@ class DisplayConfig:
         if colour_profile_to_use not in supported_colour_profiles:
             raise ValueError(
                 f"Colour profile {COLOUR_PROFILE.name_from_value(colour_profile_to_use)} is not in the list of supported colour profiles for {display_name} "
-                # type: ignore
-                f"[{', '.join(COLOUR_PROFILE.name_from_value(cp) for cp in supported_colour_profiles)}]"
+                f"[{', '.join(COLOUR_PROFILE.name_from_value(cp) for cp in supported_colour_profiles)}]" # type: ignore
             )
 
         image_format_to_use = image_format or supported_image_formats[0]
@@ -31,8 +30,7 @@ class DisplayConfig:
         if image_format_to_use not in supported_image_formats:
             raise ValueError(
                 f"Image format {IMAGE_TYPE.name_from_value(image_format_to_use)} is not in the list of supported image formats for {display_name} "
-                # type: ignore
-                f"[{', '.join(IMAGE_TYPE.name_from_value(cp) for cp in supported_image_formats)}]"
+                f"[{', '.join(IMAGE_TYPE.name_from_value(cp) for cp in supported_image_formats)}]" # type: ignore
             )
 
         self.display_name = display_name
