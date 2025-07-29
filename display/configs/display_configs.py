@@ -1,10 +1,10 @@
 from picographics import DISPLAY_INKY_PACK, DISPLAY_PICO_DISPLAY_2
-from src.enums.image_types import IMAGE_TYPE
-from src.enums.display_configs import DISPLAY_CONFIG
-from src.enums.colour_profiles import COLOUR_PROFILE
-from src.enums.display_types import DISPLAY_TYPE
-from src.display.configs.bases.display_config import DisplayConfig
-from src.display.configs.bases.pimoroni_config import PimoroniDisplayConfig
+from ...enums.image_types import IMAGE_TYPE
+from ...enums.display_configs import DISPLAY_CONFIG
+from ...enums.colour_profiles import COLOUR_PROFILE
+from ...enums.display_types import DISPLAY_TYPE
+from .bases.display_config import DisplayConfig
+from .bases.pimoroni_config import PimoroniDisplayConfig
 
 
 def display2_config(image_format: int | None = None):

@@ -1,4 +1,4 @@
-from src.helpers.name_from_value_mixin import NameFromValueMixin
+from ..helpers.name_from_value_mixin import NameFromValueMixin
 
 
 class DISPLAY_CONFIG(NameFromValueMixin):

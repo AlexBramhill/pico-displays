@@ -1,6 +1,6 @@
-from src.enums.image_types import IMAGE_TYPE
-from src.display.configs.bases.pimoroni_config import PimoroniDisplayConfig
-from src.enums.colour_profiles import COLOUR_PROFILE
+from ....enums.image_types import IMAGE_TYPE
+from .pimoroni_config import PimoroniDisplayConfig
+from ....enums.colour_profiles import COLOUR_PROFILE
 
 
 class DisplayConfig:

@@ -1,10 +1,10 @@
-from src.image_renderer.abstract.image_renderer_abstract import ImageRendererAbstract
-from src.image_renderer.concrete.waveshare_3in7_eink_bmp_raw_renderer import Waveshare3In7EinkBmpRawRenderer
-from src.enums.display_types import DISPLAY_TYPE
-from src.image_renderer.concrete.pimoroni_jpeg_renderer import PimoroniJpegRenderer
-from src.image_renderer.concrete.pimoroni_png_renderer import PimoroniPngRenderer
-from src.display.abstract.display_abstract import DisplayAbstract
-from src.enums.image_types import IMAGE_TYPE
+from ..abstract.image_renderer_abstract import ImageRendererAbstract
+from ..concrete.waveshare_3in7_eink_bmp_raw_renderer import Waveshare3In7EinkBmpRawRenderer
+from ...enums.display_types import DISPLAY_TYPE
+from ..concrete.pimoroni_jpeg_renderer import PimoroniJpegRenderer
+from ..concrete.pimoroni_png_renderer import PimoroniPngRenderer
+from ...display.abstract.display_abstract import DisplayAbstract
+from ...enums.image_types import IMAGE_TYPE
 
 
 class ImageRendererFactory:

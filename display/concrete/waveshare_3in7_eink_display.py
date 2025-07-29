@@ -1,7 +1,7 @@
-from src.enums.colour_profiles import COLOUR_PROFILE
-from src.display.configs.bases.display_config import DisplayConfig
-from src.display.abstract.display_abstract import DisplayAbstract
-from src.display.drivers.waveshare_pico_epaper_3in7 import EPD_3in7
+from ...enums.colour_profiles import COLOUR_PROFILE
+from ..configs.bases.display_config import DisplayConfig
+from ..abstract.display_abstract import DisplayAbstract
+from ..drivers.waveshare_pico_epaper_3in7 import EPD_3in7
 
 
 class Waveshare3In7EinkDisplay(DisplayAbstract): \

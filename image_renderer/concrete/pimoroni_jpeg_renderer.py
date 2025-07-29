@@ -1,7 +1,7 @@
 import jpegdec
-from src.display.concrete.pimoroni_display import PimoroniDisplay
-from src.enums.image_types import IMAGE_TYPE
-from src.image_renderer.abstract.image_renderer_abstract import ImageRendererAbstract
+from ...display.concrete.pimoroni_display import PimoroniDisplay
+from ...enums.image_types import IMAGE_TYPE
+from ..abstract.image_renderer_abstract import ImageRendererAbstract
 
 
 class PimoroniJpegRenderer(ImageRendererAbstract):

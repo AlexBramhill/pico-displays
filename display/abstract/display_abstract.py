@@ -1,6 +1,6 @@
 import time
 
-from src.display.configs.bases.display_config import DisplayConfig
+from ..configs.bases.display_config import DisplayConfig
 
 
 class DisplayAbstract:

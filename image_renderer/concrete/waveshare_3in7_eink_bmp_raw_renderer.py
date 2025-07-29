@@ -1,7 +1,7 @@
-from src.enums.colour_profiles import COLOUR_PROFILE
-from src.enums.image_types import IMAGE_TYPE
-from src.display.concrete.waveshare_3in7_eink_display import Waveshare3In7EinkDisplay
-from src.image_renderer.abstract.image_renderer_abstract import ImageRendererAbstract
+from ...enums.colour_profiles import COLOUR_PROFILE
+from ...enums.image_types import IMAGE_TYPE
+from ...display.concrete.waveshare_3in7_eink_display import Waveshare3In7EinkDisplay
+from ..abstract.image_renderer_abstract import ImageRendererAbstract
 
 
 class Waveshare3In7EinkBmpRawRenderer(ImageRendererAbstract):
