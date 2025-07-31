@@ -2,7 +2,7 @@ from ..abstract.display_base import DisplayBase
 from ..enums import COLOUR_PROFILE, IMAGE_TYPE
 
 
-class PimoroniDisplay(DisplayBase):
+class PimoroniInkyDisplay(DisplayBase):
 
     def __init__(self,
                  max_update_speed_in_ms=0,
@@ -33,7 +33,7 @@ class PimoroniDisplay(DisplayBase):
         self._jpegdecInstance = jpegdec.JPEG(self._instance)
         self._pngdecInstance = pngdec.PNG(self._instance)
 
-    def _soft_update(self):
+    def _update_display(self):
         self._instance.set_update_speed(2)
         self._instance.update()
 
@@ -44,9 +44,9 @@ class PimoroniDisplay(DisplayBase):
     def _draw_jpg_1bit(self, img_data):
         self._jpegdecInstance.open_RAM(img_data)
         self._jpegdecInstance.decode(0, 0)
-        self._instance.update()
+        self._update_display()
 
     def _draw_png_1bit(self, img_data):
         self._pngdecInstance.open_RAM(img_data)
         self._pngdecInstance.decode(0, 0)
-        self._instance.update()
+        self._update_display()
