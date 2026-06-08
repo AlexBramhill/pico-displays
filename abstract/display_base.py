@@ -36,11 +36,11 @@ class DisplayBase:
                 f"Unsupported combination: {img_format} with {color_profile}")
 
     def _is_ready_for_update(self):
-        return self._max_update_speed_in_ms == 0 or time.ticks_ms() >= self._next_valid_update_time
+        return self._max_update_speed_in_ms == 0 or time.ticks_diff(time.ticks_ms(), self._next_valid_update_time) >= 0
 
     def _update_next_valid_update_time(self):
         if self._max_update_speed_in_ms > 0:
-            self._next_valid_update_time = time.ticks_ms() + self._max_update_speed_in_ms
+            self._next_valid_update_time = time.ticks_add(time.ticks_ms(), self._max_update_speed_in_ms)
 
     def _hard_refresh(self):
         raise NotImplementedError(
