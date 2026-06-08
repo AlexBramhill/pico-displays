@@ -4,8 +4,8 @@ class NameFromValueMixin:
         for name, val in vars(cls).items():
             if val == value:
                 return name
-            raise ValueError(
-                f"No attribute found with value {value} in class {cls.__name__}")
+        raise ValueError(
+            f"No attribute found with value {value} in class {cls.__name__}")
 
     @classmethod
     def safe_name_from_value(cls, value):
